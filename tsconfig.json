@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "declaration": true,
+    "noImplicitAny": true, // 不允许 any 类型
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "strict": true, // 严格模式
+
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es7"
+    ],
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    "rootDir":"./src",      // 仅用来控制输出的目录结构--outDir。
+    "outDir":"./build"     // 重定向输出目录。
+  },
+
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
