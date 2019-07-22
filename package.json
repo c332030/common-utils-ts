@@ -2,7 +2,7 @@
   "name": "@c332030/common-utils-ts",
   "version": "1.0.0",
   "description": "common-utils",
-  "main": "build/index.d.ts",
+  "main": "src/index.ts",
   "author": "c332030",
   "license": "MIT",
   "private": true,
