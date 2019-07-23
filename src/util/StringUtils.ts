@@ -11,11 +11,13 @@ import {Tools} from './Tools'
 
 export class StringUtils {
 
+  protected constructor() {}
+
   /**
    * 删除多余空格
    * @param str
    */
-  public static trim(str: string): string{
+  static trim(str: string): string{
 
     if(Tools.isEmpty(str)) {
       return '';
