@@ -17,12 +17,16 @@ export class StringUtils {
    * 删除多余空格
    * @param str
    */
-  static trim(str: string): string{
+  public static trim(str: string): string{
 
     if(Tools.isEmpty(str)) {
       return '';
     }
 
     return str.trim();
+  }
+
+  public static dealNull(str: string | null | undefined): string {
+    return str ? str : '';
   }
 }

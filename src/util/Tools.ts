@@ -16,7 +16,7 @@ export class Tools{
    * 判断是否为空
    * @param obj
    */
-  static isNull(obj: any): boolean {
+  public static isNull(obj: any | null | undefined): boolean {
     return obj === undefined || obj === null;
   }
 
@@ -24,7 +24,7 @@ export class Tools{
    * 判断是否为空
    * @param obj
    */
-  static isEmpty(obj: any): boolean {
+  public static isEmpty(obj: any): boolean {
     return this.isNull(obj) || obj === '';
   }
 
@@ -33,7 +33,7 @@ export class Tools{
    * @param obj
    * @param defaultValue
    */
-  static dealNull<E>(obj: E, defaultValue: E) {
+  public static dealNull<E>(obj: E | null | undefined, defaultValue: E) {
     return this.isNull(obj) ? defaultValue : obj;
   }
 
@@ -42,7 +42,7 @@ export class Tools{
    * @param obj
    * @param defaultValue
    */
-  static dealEmpty<E>(obj: E, defaultValue: E) {
+  public static dealEmpty<E>(obj: E | null | undefined, defaultValue: E) {
     return this.isEmpty(obj) ? defaultValue : obj;
   }
 
@@ -51,7 +51,7 @@ export class Tools{
    * @param obj
    * @param msg
    */
-  static notNull(obj: any, msg: string = 'Not null') {
+  public static notNull(obj: any, msg: string = 'Not null') {
     if(this.isNull(obj)) {
       throw new Error(msg);
     }
@@ -62,7 +62,7 @@ export class Tools{
    * @param obj
    * @param msg
    */
-  static notEmpty(obj: any, msg: string = 'Not empty') {
+  public static notEmpty(obj: any, msg: string = 'Not empty') {
     if(this.isEmpty(obj)) {
       throw new Error(msg);
     }
@@ -74,7 +74,7 @@ export class Tools{
    * @param key 值
    * @param defaultValue 默认值
    */
-  static get<E>(
+  public static get<E>(
     obj: any,
     key: string,
     defaultValue?: E
