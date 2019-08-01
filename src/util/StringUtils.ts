@@ -14,6 +14,14 @@ export class StringUtils {
   protected constructor() {}
 
   /**
+   * 是否是字符串
+   * @param str
+   */
+  public static isString(str: any): boolean {
+    return typeof str === 'string';
+  }
+
+  /**
    * 删除多余空格
    * @param str
    */

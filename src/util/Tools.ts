@@ -1,9 +1,11 @@
 /**
- * <p>Description: this.</p>
+ * <p>Description: </p>
  * @author c332030（袁兴旺）
  * @version 1.0
  * @date 2019-7-12 16:25
  */
+
+export const log = console.log;
 
 /**
  * 工具类
@@ -25,7 +27,7 @@ export class Tools{
    * @param obj
    */
   public static isEmpty(obj: any): boolean {
-    return this.isNull(obj) || obj === '';
+    return isNull(obj) || obj === '';
   }
 
   /**
@@ -34,7 +36,7 @@ export class Tools{
    * @param defaultValue
    */
   public static dealNull<E>(obj: E | null | undefined, defaultValue: E) {
-    return this.isNull(obj) ? defaultValue : obj;
+    return isNull(obj) ? defaultValue : obj;
   }
 
   /**
@@ -43,7 +45,7 @@ export class Tools{
    * @param defaultValue
    */
   public static dealEmpty<E>(obj: E | null | undefined, defaultValue: E) {
-    return this.isEmpty(obj) ? defaultValue : obj;
+    return isEmpty(obj) ? defaultValue : obj;
   }
 
   /**
@@ -52,7 +54,7 @@ export class Tools{
    * @param msg
    */
   public static notNull(obj: any, msg: string = 'Not null') {
-    if(this.isNull(obj)) {
+    if(isNull(obj)) {
       throw new Error(msg);
     }
   }
@@ -63,7 +65,7 @@ export class Tools{
    * @param msg
    */
   public static notEmpty(obj: any, msg: string = 'Not empty') {
-    if(this.isEmpty(obj)) {
+    if(isEmpty(obj)) {
       throw new Error(msg);
     }
   }
@@ -93,12 +95,12 @@ export class Tools{
     for(let e in keySpilt) {
 
       const keyTmp = keySpilt[e];
-      if(Tools.isEmpty(keyTmp)) {
+      if(isEmpty(keyTmp)) {
         return defaultValue;
       }
 
       objTmp = objTmp[keyTmp];
-      if(this.isNull(objTmp)) {
+      if(isNull(objTmp)) {
         return defaultValue;
       }
     }
@@ -106,3 +108,11 @@ export class Tools{
     return objTmp;
   }
 }
+
+export const get = Tools.get;
+
+export const isNull = Tools.isNull;
+export const isEmpty = Tools.isEmpty;
+
+export const notNull = Tools.notNull;
+export const notEmpty = Tools.notEmpty;
