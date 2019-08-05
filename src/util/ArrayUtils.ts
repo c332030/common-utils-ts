@@ -9,4 +9,9 @@
 
 export class ArrayUtils {
 
+  public static isEmpty(arr?: Array<any>):boolean {
+    return arr ? arr.length === 0 : false;
+  }
 }
+
+export const isArrEmpty = ArrayUtils.isEmpty;

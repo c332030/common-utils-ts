@@ -6,4 +6,9 @@
  */
 
 export * from "./Tools";
+
 export * from "./StringUtils";
+export * from "./ArrayUtils";
+
+export * from "./CommUtils";
+
