@@ -38,3 +38,5 @@ export class StringUtils {
     return str ? str : '';
   }
 }
+
+export const dealStrNull = StringUtils.dealNull;

@@ -80,7 +80,7 @@ export class Tools{
     obj: any
     ,key: string
     ,defaultValue: E
-  ): E | undefined {
+  ): E {
 
     if(!obj || !key) {
       return defaultValue;
