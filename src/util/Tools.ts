@@ -83,7 +83,7 @@ export class Tools{
   ): E | undefined {
 
     if(!obj || !key) {
-      return undefined;
+      return defaultValue;
     }
 
     const keySpilt = key.split('.');
@@ -96,12 +96,12 @@ export class Tools{
 
       const keyTmp = keySpilt[e];
       if(isEmpty(keyTmp)) {
-        return undefined;
+        return defaultValue;
       }
 
       objTmp = objTmp[keyTmp];
       if(isNull(objTmp)) {
-        return undefined;
+        return defaultValue;
       }
     }
 
