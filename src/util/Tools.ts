@@ -7,6 +7,12 @@
 
 export const log = console.log;
 
+export const trace = console.trace;
+export const debug = console.debug;
+export const info = console.info;
+export const warn = console.warn;
+export const error = console.error;
+
 /**
  * 工具类
  */
@@ -35,8 +41,8 @@ export class Tools{
    * @param obj
    * @param defaultValue
    */
-  public static dealNull<E>(obj: E | null | undefined, defaultValue: E) {
-    return isNull(obj) ? defaultValue : obj;
+  public static dealNull<E>(obj: E | undefined | null, defaultValue: E): E {
+    return isNull(obj) ? defaultValue : <E>obj;
   }
 
   /**
@@ -44,8 +50,8 @@ export class Tools{
    * @param obj
    * @param defaultValue
    */
-  public static dealEmpty<E>(obj: E | null | undefined, defaultValue: E) {
-    return isEmpty(obj) ? defaultValue : obj;
+  public static dealEmpty<E>(obj: E | null | undefined, defaultValue: E): E {
+    return isEmpty(obj) ? defaultValue : <E>obj;
   }
 
   /**
