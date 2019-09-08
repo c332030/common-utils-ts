@@ -18,7 +18,23 @@ export const error = console.error;
  */
 export class Tools{
 
-  protected constructor(){}
+  protected constructor(){
+
+  }
+
+  /**
+   * 是否存在 document 变量
+   */
+  public static hasDocument(): boolean {
+    return typeof document !== 'undefined';
+  }
+
+  /**
+   * 是否存在 window 变量
+   */
+  public static hasWindow(): boolean {
+    return typeof window !== 'undefined';
+  }
 
   /**
    * 判断是否为空
