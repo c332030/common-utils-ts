@@ -18,9 +18,7 @@ export const error = console.error;
  */
 export class Tools{
 
-  protected constructor(){
-
-  }
+  protected constructor(){}
 
   /**
    * 是否存在 document 变量
@@ -109,14 +107,10 @@ export class Tools{
     }
 
     const keySpilt = key.split('.');
-    if(keySpilt.length == 1) {
-      return obj[key];
-    }
 
     let objTmp = obj;
-    for(let e in keySpilt) {
+    for(const keyTmp of keySpilt) {
 
-      const keyTmp = keySpilt[e];
       if(isEmpty(keyTmp)) {
         return defaultValue;
       }
